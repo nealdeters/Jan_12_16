@@ -1,9 +1,7 @@
 class RecipesController < ApplicationController
-  def meal
-    @recipe = Recipe.last
-  end
-
-  def every_meal
+  
+  def index
     @recipes = Recipe.all
   end
+
 end

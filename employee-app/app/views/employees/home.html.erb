@@ -23,6 +23,9 @@
     <th>
       <h3>Gender</h3>
     </th>  
+    <th>
+      Delete?
+    </th>
   </tr>
     <tr>
     <td>
@@ -45,6 +48,9 @@
     </td>
     <td>
       <h3><%= @employee.gender %></h3>
+    </td>  
+    <td>
+      <a data-confirm="Are you sure?" data-method="delete" href="/employees/<%= employee.id %>" rel="nofollow">Delete</a>
     </td>  
   </tr>
 </table>
