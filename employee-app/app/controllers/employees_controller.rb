@@ -16,6 +16,10 @@ class EmployeesController < ApplicationController
                                 job_title: params[:job_title],
                                 salary: params[:salary],
                                 gender: params[:gender]})
+    
+    flash[:success] = "New Employee Created"
+
+    redirect_to "/"
   end
 
   def show
@@ -36,10 +40,18 @@ class EmployeesController < ApplicationController
                       job_title: params[:job_title],
                       salary: params[:salary],
                       gender: params[:gender]})
+
+    flash[:info] = "Employee Updated"
+
+    redirect_to "/employees/#{@employee.id}"
   end
 
   def destroy
     @employee = Employee.find(params[:id])
     @employee.destroy
+
+    flash[:danger] = "Employee Deleted"
+
+    redirect_to '/'
   end
 end

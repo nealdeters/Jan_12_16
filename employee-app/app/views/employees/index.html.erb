@@ -1,5 +1,7 @@
 <h1>Employee</h1>
 
+<%= link_to "Add new employee", "/employees/new", class: "btn btn-default" %>
+
 <table>
    <tr>
     <th>
@@ -22,37 +24,37 @@
     </th>
     <th>
       <h3>Gender</h3>
-    </th>  
-    <th>
-      <h3>Delete?</h3>
     </th> 
+    <th>
+      <h3>View</h3>
+    </th>  
   </tr>
 <% @employees.each do |employee| %>
     <tr>
     <td>
-      <h3><%= employee.first_name %></h3>
+      <h4><%= employee.first_name %></h4>
     </td>
     <td>
-      <h3><%= employee.last_name %></h3>
+      <h4><%= employee.last_name %></h4>
     </td>
     <td>
-      <h3><%= employee.email %></h3>
+      <h4><%= employee.email %></h4>
     </td>
     <td>
-      <h3><%= employee.phone_number %></h3>
+      <h4><%= employee.phone_number %></h4>
     </td>
     <td>
-      <h3><%= employee.job_title %></h3>
+      <h4><%= employee.job_title %></h4>
     </td>
     <td>
-      <h3><%= employee.salary %></h3>
+      <h4><%= employee.salary %></h4>
     </td>
     <td>
-      <h3><%= employee.gender %></h3>
+      <h4><%= employee.gender %></h4>
     </td>  
     <td>
-      <a data-confirm="Are you sure?" data-method="delete" href="/employees/<%= employee.id %>" rel="nofollow">Delete</a>
-    </td>
+      <%= link_to "View", "/employees/#{employee.id}", class: "btn btn-default" %>
+    </td> 
   </tr>
   <br>
 <% end %>

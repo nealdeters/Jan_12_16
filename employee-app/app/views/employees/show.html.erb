@@ -1,7 +1,11 @@
-<h1>First Name: <%= @employee.first_name %></h1>
-<h1>Last Name: <%= @employee.last_name %></h1>
-<h1>Email: <%= @employee.email %></h1>
-<h1>Phone Number: <%= @employee.phone_number %></h1>
-<h1>Job Title: <%= @employee.job_title %></h1>
-<h1>Salary: <%= @employee.salary %></h1>
-<h1>Gender: <%= @employee.gender %></h1>
+<h3>First Name: </h3><h4><%= @employee.first_name %></h4>
+<h3>Last Name: </h3><h4><%= @employee.last_name %></h4>
+<h3>Email: </h3><h4><%= @employee.email %></h4>
+<h3>Phone Number: </h3><h4><%= @employee.phone_number %></h4>
+<h3>Job Title: </h3><h4><%= @employee.job_title %></h4>
+<h3>Salary: </h3><h4><%= @employee.salary %></h4>
+<h3>Gender: </h3><h4><%= @employee.gender %></h4>
+
+<%= link_to "Home", "/", class: "btn btn-default" %>
+<%= link_to "Edit", "/employees/#{@employee.id}/edit", class: "btn btn-default" %>
+<%= link_to "Delete", "/employees/#{@employee.id}", method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure?"}  %>
