@@ -1,0 +1,8 @@
+<h3>Title: </h3><h4><%= @recipe.title %></h4>
+<h3>Chef: </h3><h4><%= @recipe.chef %></h4>
+<h3>Ingredients: </h3><h4><%= @recipe.ingredients %></h4>
+<h3>Directions: </h3><h4><%= @recipe.directions %></h4>
+
+<%= link_to "Home", "/", class: "btn btn-default" %>
+<%= link_to "Edit", "/recipes/#{@recipe.id}/edit", class: "btn btn-default" %>
+<%= link_to "Delete", "/recipes/#{@recipe.id}", method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure?"}  %>
