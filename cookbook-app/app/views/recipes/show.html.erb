@@ -1,8 +1,25 @@
-<h3>Title: </h3><h4><%= @recipe.title %></h4>
-<h3>Chef: </h3><h4><%= @recipe.chef %></h4>
-<h3>Ingredients: </h3><h4><%= @recipe.ingredients %></h4>
-<h3>Directions: </h3><h4><%= @recipe.directions %></h4>
+<h1><%= @recipe.title %></h1>
+<h2><%= @recipe.chef %></h2>
+<h4>Updated on: <%= @recipe.friendly_updated_at %></h4>
 
+<h3>Prep Time: <%= @recipe.friendly_preptime %></h3>
+
+<h3>Ingredients</h3>
+  <ul>
+    <% @ingredient_list.each do |ingredient| %>
+      <li><%= ingredient %></li>
+    <% end %>
+  </ul>
+<h3>Directions</h3>
+  <ol>
+    <% @directions_list.each do |step| %>
+      <li><%= step %></li>
+    <% end %>
+  </ol>
+
+
+<%= image_tag @recipe.image %>
+<br>
 <%= link_to "Home", "/", class: "btn btn-default" %>
 <%= link_to "Edit", "/recipes/#{@recipe.id}/edit", class: "btn btn-default" %>
 <%= link_to "Delete", "/recipes/#{@recipe.id}", method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure?"}  %>

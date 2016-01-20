@@ -1,34 +1,35 @@
-<%= form_tag '/employees', method: :post do %>
-  <div>
-    <%= label_tag :first_name %>
-    <%= text_field_tag :first_name %>
-  </div>
-  <div>
-    <%= label_tag :last_name %>
-    <%= text_field_tag :last_name %>
-  </div>
-  <div>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
-  </div>
-  <div>
-    <%= label_tag :phone %>
-    <%= text_field_tag :phone %>
-  </div>
-  <div>
-    <%= label_tag :job_title %>
-    <%= text_field_tag :job_title %>
-  </div>
-  <div>
-    <%= label_tag :salary %>
-    <%= text_field_tag :salary %>
-  </div>
-  <div>
-    <%= label_tag :gender %>
-    <%= text_field_tag :gender %>
-  </div>
+<div class="col-md-8">
+  <h1>Add Employee</h1>
 
-  <div>
-    <%= submit_tag 'Create Employee' %>
-  </div>
-<% end %>
+  <%= form_tag '/employees', method: :post do %>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th><%= label_tag :first_name %></th>
+        <th><%= label_tag :last_name %></th>
+        <th><%= label_tag :email %></th>
+        <th><%= label_tag :phone %></th>
+        <th><%= label_tag :job_title %></th>
+        <th><%= label_tag :salary %></th>
+        <th><%= label_tag :gender %></th>  
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><%= text_field_tag :first_name %></td>
+        <td><%= text_field_tag :last_name %></td>
+        <td><%= text_field_tag :email %></td>
+        <td><%= text_field_tag :phone %></td>
+        <td><%= text_field_tag :job_title %></td>
+        <td><%= text_field_tag :salary %></td>
+        <td><%= text_field_tag :gender %></td>  
+      </tr>
+    </tbody>
+  </table>
+
+  <%= submit_tag 'Add', class: "btn btn-default"%>
+
+  <% end %>
+</div>  

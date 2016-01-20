@@ -1,26 +1,26 @@
-<h1>Add a new recipe</h1>
+<h2>Add a new recipe</h2>
 
 <%= form_tag '/recipes', method: :post do %>
-  <div>
+  <h3>
     <%= label_tag :title %>
     <%= text_field_tag :title %>
-  </div>
+  </h3>
 
-  <div>
+  <h3>
     <%= label_tag :chef %>
     <%= text_field_tag :chef %>
-  </div>
+  </h3>
 
-  <div>
+  <h3>
     <%= label_tag :ingredients %>
     <%= text_field_tag :ingredients %>
-  </div>
+  </h3>
 
-  <div>
+  <h3>
     <%= label_tag :directions %>
     <%= text_field_tag :directions %>
-  </div>
+  </h3>
 
-  <%= submit_tag "Create Recipe" %>
+  <%= submit_tag "Create Recipe", class: "btn btn-default" %>
 
 <% end %>

@@ -1,13 +1,15 @@
-<a class="btn btn-default" href="/recipes/new">Create New Recipe</a>
+<div class="row">
+  <% @recipes.each do |recipe| %>
+    <div class="col-md-offset-1 col-md-3 col-sm-6 list-view">
+      <div class="thumbnail">
+      <h2><a href="/recipes/<%= recipe.id %>"><%= recipe.title %></a></h2> 
 
-<% @recipes.each do |recipe| %>
-  <h2><%= recipe.id %></h2> 
-  <h2><%= recipe.title %></h2> 
-
-  <h3><%= recipe.chef %></h3>
-  <h3><%= recipe.ingredients %></h3>
-  <h3><%= recipe.directions %></h3> 
-  <%= link_to "Show", "/recipes/#{recipe.id}", class: "btn btn-default" %>
-  <hr>
-
-<% end %>
+      <h3><%= recipe.chef %></h3>
+      <h3><%= recipe.ingredients %></h3>
+      <h3><%= recipe.directions %></h3> 
+      <%= image_tag recipe.image, width: 300, class: "img-responsive" %>
+      <br>
+      </div>
+    </div>
+  <% end %>
+</div>
