@@ -10,12 +10,14 @@ class EmployeesController < ApplicationController
 
   def create
     @employee = Employee.create({first_name: params[:first_name],
+                                middle_name: params[:middle_name],
                                 last_name: params[:last_name],
                                 email: params[:email],
                                 phone_number: params[:phone],
                                 job_title: params[:job_title],
                                 salary: params[:salary],
-                                gender: params[:gender]})
+                                gender: params[:gender],
+                                bio: params[:bio]})
     
     flash[:success] = "New Employee Created"
 
@@ -34,12 +36,14 @@ class EmployeesController < ApplicationController
     @employee = Employee.find(params[:id])
 
     @employee.update({first_name: params[:first_name],
+                      middle_name: params[:middle_name],
                       last_name: params[:last_name],
                       email: params[:email],
                       phone_number: params[:phone],
                       job_title: params[:job_title],
                       salary: params[:salary],
-                      gender: params[:gender]})
+                      gender: params[:gender],
+                      bio: params[:bio]})
 
     flash[:info] = "Employee Updated"
 
