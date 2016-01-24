@@ -39,12 +39,29 @@
         <td><%= text_field_tag :gender, @employee.gender %></td>  
       </tr>
     </tbody>
-  </table>
 
+    <thead>
+      <tr>
+        <th><%= label_tag :longitude %></th>
+        <th><%= label_tag :latitude %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><%= text_field_tag :longitude %></td>
+        <td><%= text_field_tag :latitude %></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4><%= label_tag :address %></h4>
+  <%= text_field_tag :address, @employee.address %>
+  <br>
   <h4><%= label_tag :bio %></h4>
   <%= text_area_tag :bio, nil, size: "50x10" %>
   <br>
   <br>
+
 
   <%= submit_tag 'Update', class: "btn btn-default"%>
 

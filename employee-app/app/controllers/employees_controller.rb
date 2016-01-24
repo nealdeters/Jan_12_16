@@ -17,7 +17,12 @@ class EmployeesController < ApplicationController
                                 job_title: params[:job_title],
                                 salary: params[:salary],
                                 gender: params[:gender],
+                                address: params[:address],
+                                longitude: params[:longitude],
+                                latitude: params[:latitude],
                                 bio: params[:bio]})
+
+    @coordinates = Geocoder.coordinates(params[:address])
     
     flash[:success] = "New Employee Created"
 
@@ -43,6 +48,9 @@ class EmployeesController < ApplicationController
                       job_title: params[:job_title],
                       salary: params[:salary],
                       gender: params[:gender],
+                      address: params[:address],
+                      longitude: params[:longitude],
+                      latitude: params[:latitude],
                       bio: params[:bio]})
 
     flash[:info] = "Employee Updated"
